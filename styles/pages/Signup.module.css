@@ -1,0 +1,105 @@
+.signupFormContainer{
+    display: flex;
+    justify-content: space-between;
+    height: 100vh
+
+}
+
+.formContainer{
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.topLine{
+    color : var(--text-color-grey);
+    font-weight: 600;
+    font-size: 22px;
+    text-transform: uppercase;
+}
+
+.title{
+    font-size: 40px;
+    line-height: 30px;
+}
+
+.loginLink{
+    margin: 10px 0 10px 0;
+}
+
+.connectLink{
+    color : var(--bg-color-accent);
+}
+
+
+.signupForm{
+    display: flex;
+    flex-direction: column;
+}
+
+.signupForm>*{
+    margin: 10px 0;
+}
+
+.nameContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nameContainer>.formFieldContainer{
+    flex: 1;
+}
+
+.nameContainer>:first-child{
+    margin-right: 20px;
+}
+
+.formFieldContainer{
+    position: relative;
+    height: 60px;
+    border-radius: 20px;
+    background : var(--bg-color-primary);
+    overflow: hidden;
+}
+
+.fieldLabel{
+    position: absolute;
+    top: 5px;
+    left: 20px;
+    font-size: 12px;
+    color: var(--text-color-grey);
+}
+
+.formField{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    padding-top: 20px;
+    height: 100%;
+}
+
+.submitButton{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 100%;
+    border-radius: 20px;
+    background : var(--bg-color-accent);
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+}
+
+
+
+
+
+
+.illustration{
+    flex: 2;
+}

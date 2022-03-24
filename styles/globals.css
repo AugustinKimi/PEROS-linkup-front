@@ -13,4 +13,26 @@ a {
 
 * {
   box-sizing: border-box;
+  border: none;
+  background: none;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins';
+  outline: none;
+  text-decoration: none;
+}
+
+content{
+  display: block;
+  padding: 100px;
+}
+
+
+:root{
+  --bg-color-primary : #DBDFEB ;
+  --bg-color-secondary : #76809D;
+  --bg-color-host :  #007EF2;
+  --bg-color-refugee : #F27400;
+  --text-color-white : #ededed;
+  --text-color-grey : #76809D;
 }
