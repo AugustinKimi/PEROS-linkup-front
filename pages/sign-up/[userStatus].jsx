@@ -29,7 +29,8 @@ const SignUp = () => {
             isHost :  userStatus == "host" ,
             isRefugee :  userStatus == "refugee" ,
         }
-        const res = await fetch(`http://localhost:8080/api/add-user`,
+        console.log(process.env.NEXT_PUBLIC_API_BASE_URL)
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/add-user`,
         {
             headers: {
             'Accept': 'application/json',

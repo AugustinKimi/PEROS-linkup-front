@@ -54,7 +54,7 @@ const Request = ({request}) => {
 
             <div className={style.userInfos}>
                 <span className={style.userName}>{request.user.name} {request.user.lastName}</span>
-                <SmallInfo iconUrl={'/icon/ijjef.png'} info={request.isStudent ? "Etudiant" : "Travailleur"}/>
+                <SmallInfo iconUrl={'/icon/ijjef.png'} info={request.userStatus}/>
                 <SmallInfo iconUrl={'/icon/map-icon.png'} info={request.nativeCountry}/>
             </div>
 
@@ -90,7 +90,7 @@ export default RequestExplorer
 
 
 export async function getServerSideProps(context) {
-    const res = await fetch(`http://localhost:8080/api/get-all-requests`,
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/get-all-requests`,
     {
         headers: {
         'Accept': 'application/json',

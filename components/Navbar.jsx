@@ -29,6 +29,7 @@ const Navbar = () => {
     const disconnectUser = () => {
         window.localStorage.removeItem("token")
         setUserIsConnected(false)
+        setUser({})
     }
 
     return(
@@ -47,7 +48,7 @@ const Navbar = () => {
             </ul>
             {!userIsConnected ? 
                 <Link href='/login'><a className={style.connectLink}>Se connecter</a></Link> :
-                <button onClick={disconnectUser} className={style.connectLink}>Se déconnecter</button>
+                <span>{user.name}</span>
             }
             
         </nav>

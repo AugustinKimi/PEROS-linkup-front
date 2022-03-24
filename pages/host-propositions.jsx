@@ -28,7 +28,7 @@ const Explorer = ({propositions}) =>{
     return(
         <div className={`${style.explorerContainer} ${style.propositionsContainer}`}>
             <span className={style.topLine}>Bienvenue {user.name}</span>
-            <h1 className={style.title}>Rechercher une personnes à aider</h1>
+            <h1 className={style.title}>Rechercher un lieu d'acceuil</h1>
             <div className={style.searchContainer}>
                 <img src="/icons/ubiuef.svg"  className={style.searchIcon} />
                 <input type="text" className={style.searchInput} placeholder="Entrer un pays ou un nom ..." />
@@ -90,13 +90,14 @@ export default PropositionsExplorer
 
 
 export async function getServerSideProps(context) {
-    const res = await fetch(`http://localhost:8080/api/get-all-propositions`,
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/get-all-propositions`,
     {
         headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
         }
     })
+    console.log(res)
     const json = await res.json()
     
     // Pass data to the page via props

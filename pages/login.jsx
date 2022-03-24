@@ -2,6 +2,7 @@ import { useState } from "react"
 import style from "../styles/pages/Login.module.css"
 import jwt from 'jsonwebtoken'
 import {useRouter} from 'next/router'
+import Link from 'next/link'
 
 
 const Login = () => {
@@ -18,7 +19,7 @@ const Login = () => {
         }
 
         console.log(requestData)
-        const res = await fetch(`http://localhost:8080/api/login-user`,
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/login-user`,
         {
             headers: {
             'Accept': 'application/json',
@@ -42,7 +43,7 @@ const Login = () => {
             <div className={style.formContainer}>
                 <span className={style.topLine}>Déja membre ?</span>
                 <h1 className={style.title}>Connectez vous !</h1>
-                <span className={style.loginLink}>Pas inscrit ? <a className={style.connectLink} href="/sign-up/host">Inscrivez-vous.</a></span>
+                <span className={style.loginLink}>Pas inscrit ? <Link href="/sign-up/host"><a className={style.connectLink} href="/sign-up/host">Inscrivez-vous.</a></Link></span>
                 <form  className={style.signupForm} onSubmit={handleLogin}>
                     <div className={style.formFieldContainer}>
                             <label className={style.fieldLabel} htmlFor="email">Email</label>
@@ -58,7 +59,7 @@ const Login = () => {
                     <button type="submit" className={style.submitButton}>Se connecter</button>
                 </form>
             </div>
-            <img src="" alt="welcome illustration" className={style.illustration}/>
+            <img src="/images/connexion-welcome.svg" alt="welcome illustration" className={style.illustration}/>
         </content>
     )
 }
