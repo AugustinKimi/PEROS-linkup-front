@@ -51,11 +51,11 @@ const Proposition = ({proposition}) => {
     console.log(proposition)
     return(
         <div className={style.proposition}>
-            <img src="" alt="Profil picture" className={style.profilPicture} />
+            <img src="/images/avatar.webp" alt="Profil picture" className={style.profilPicture} />
 
             <div className={style.userInfos}>
                 <span className={style.userName}>{proposition.user.name} {proposition.user.lastName}</span>
-                <SmallInfo iconUrl={'/icons/work-icon.png'} info={proposition.isStudent ? "Etudiant" : "Travailleur"}/>
+                <SmallInfo iconUrl={'/icons/work-icon.png'} info={proposition.isStudent.userStatus}/>
                 <SmallInfo iconUrl={'/icons/map-icon.png'} info={`${proposition.city}, ${proposition.country}`}/>
             </div>
 

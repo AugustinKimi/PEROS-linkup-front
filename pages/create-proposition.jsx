@@ -60,7 +60,7 @@ const CreateRequest = () => {
 
     return(
         <content>
-            <div className={`${style.formContainer} ${user.isHost && style.propositionForm }`}>
+            <div className={`${style.formContainer} ${style.requestForm}`}>
                 <h1 className={style.title}>Bienvenue {user.name}, créez une propositon</h1>
                 <p className={style.underline}>Veuillez remplir tout les champs pour completer votre proposition</p>
                 <form  className={style.form} onSubmit={createRequest}>

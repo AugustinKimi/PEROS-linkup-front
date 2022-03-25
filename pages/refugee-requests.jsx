@@ -51,7 +51,7 @@ const Request = ({request}) => {
     console.log(request)
     return(
         <div className={style.request}>
-            <img src="" alt="Profil picture" className={style.profilPicture} />
+            <img src="/images/avatar.webp" alt="Profil picture" className={style.profilPicture} />
 
             <div className={style.userInfos}>
                 <span className={style.userName}>{request.user.name} {request.user.lastName}</span>

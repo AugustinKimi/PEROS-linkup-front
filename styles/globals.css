@@ -25,6 +25,7 @@ a {
 content{
   display: block;
   padding: 100px;
+  width: 100vw;
 }
 
 

@@ -1,9 +1,32 @@
+.homeContainer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.left{
+  flex : 1;
+  margin-right: 40px;
+}
+
+.title{
+  font-size: 40px;
+}
+
+.illustrationContainer{
+  flex: 1;
+  height: 100%;
+}
+
+.illustration{
+  width: 100%;
+}
 
 .linksContainer{
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  margin-top: 200px;
+  justify-content: space-between;
+  margin-top: 20px;
 }
 
 .linkButton{
