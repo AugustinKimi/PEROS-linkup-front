@@ -1,0 +1,5 @@
+.conversationContainer{
+    flex: 1;
+    /* background: red; */
+    border-right: 1px solid var(--bg-color-primary);
+}

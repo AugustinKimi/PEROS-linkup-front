@@ -1,4 +1,5 @@
 import style from '../styles/pages/Explorer.module.css'
+import Link from 'next/link'
 import jwt from 'jsonwebtoken'
 import { useEffect,useState } from 'react'
 
@@ -72,7 +73,7 @@ const Proposition = ({proposition}) => {
 
             <div className={style.separator}></div>
 
-            <button className={style.contactButton}>Contacter</button>
+            <Link href={`/messages/${proposition.userId}`}><a className={style.contactButton}>Contacter</a></Link>
 
         </div>
     )
@@ -97,7 +98,6 @@ export async function getServerSideProps(context) {
         'Content-Type': 'application/json'
         }
     })
-    console.log(res)
     const json = await res.json()
     console.log(json)
 
