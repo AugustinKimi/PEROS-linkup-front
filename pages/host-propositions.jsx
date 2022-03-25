@@ -97,7 +97,6 @@ export async function getServerSideProps(context) {
         'Content-Type': 'application/json'
         }
     })
-    console.log(res)
     const json = await res.json()
     
     // Pass data to the page via props
