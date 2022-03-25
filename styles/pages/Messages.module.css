@@ -1,0 +1,7 @@
+.messagesContainer{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    height: calc(100vh - 200px);
+    /* background: red; */
+}

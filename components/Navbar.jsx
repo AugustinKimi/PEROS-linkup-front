@@ -50,6 +50,9 @@ const Navbar = () => {
                 <Link href='/login'><a className={style.connectLink}>Se connecter</a></Link> :
                 <span>{user.name}</span>
             }
+            {userIsConnected && 
+                <Link href="/messages"><a>Messages</a></Link>
+            }
             
         </nav>
     )
