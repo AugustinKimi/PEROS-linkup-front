@@ -31,7 +31,7 @@ const Explorer = ({requests}) =>{
             <span className={style.topLine}>Bienvenue {user.name}</span>
             <h1 className={style.title}>Rechercher une personnes à aider</h1>
             <div className={style.searchContainer}>
-                <img src=""  className={style.searchIcon} />
+                <img src="/icons/search-icon.svg"  className={style.searchIcon} />
                 <input type="text" className={style.searchInput} placeholder="Entrer un pays ou un nom ..." />
                 <button className={style.searchButton}>Rechercher</button>
             </div>

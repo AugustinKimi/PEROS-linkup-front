@@ -31,7 +31,7 @@ const Explorer = ({propositions}) =>{
             <span className={style.topLine}>Bienvenue {user.name}</span>
             <h1 className={style.title}>Rechercher un lieu d'acceuil</h1>
             <div className={style.searchContainer}>
-                <img src="/icons/ubiuef.svg"  className={style.searchIcon} />
+                <img src="/icons/search-icon.svg"  className={style.searchIcon} />
                 <input type="text" className={style.searchInput} placeholder="Entrer un pays ou un nom ..." />
                 <button className={style.searchButton}>Rechercher</button>
             </div>

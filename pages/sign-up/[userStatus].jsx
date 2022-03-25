@@ -47,7 +47,7 @@ const SignUp = () => {
     return(
         <content ref={form} className={style.signupFormContainer} style={{}}>
             <div className={style.formContainer}>
-                <span className={style.topLine}>Je suis un {userStatus == "host" ? "HOTE" :  "Réfugiée"}</span>
+                <span className={style.topLine}>Je suis un {userStatus == "host" ? "Hôte" :  "Réfugié"}</span>
                 <h1 className={style.title}>Créer un compte.</h1>
                 <span className={style.loginLink}>Déja membre ? <a className={style.connectLink} href="/login">Se connecter</a></span>
                 <form  className={style.signupForm} onSubmit={handleSubmit}>
