@@ -72,7 +72,7 @@ const CreateRequest = () => {
 
                         <div className={style.formFieldContainer}>
                             <label className={style.fieldLabel} htmlFor="name">Statut social</label>
-                            <input type="text" name="name" className={style.formField}  onChange={(e) => {setNativeCountry(e.target.value)}}/>
+                            <input type="text" name="name" className={style.formField}  onChange={(e) => {setUserStatus(e.target.value)}}/>
                             <img src="" alt="" className={style.formFieldIcon}/>
                         </div>
 
