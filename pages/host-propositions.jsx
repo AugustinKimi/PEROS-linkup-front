@@ -99,6 +99,8 @@ export async function getServerSideProps(context) {
     })
     console.log(res)
     const json = await res.json()
+    console.log(json)
+
     
     // Pass data to the page via props
     return { props: { propositions : json.data } }
