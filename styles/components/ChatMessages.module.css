@@ -1,18 +1,17 @@
 .messagesContainer{
-    margin: 0 20px;
+    padding: 0 20px;
+    border-right: 1px solid var(--bg-color-primary);
+    border-left: 1px solid var(--bg-color-primary);
     position: relative;
     max-width: 800px;
     flex: 4;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
 }
 
 .chatInfos{
     position: absolute;
     top: 0;
-    left: 0;
-    width: 100%;
+    left: 20px;
+    width: calc(100% - 40px);
     height: 50px;
     display: flex;
     justify-content: center;
@@ -23,11 +22,20 @@
     box-shadow: 0px 10px 15px 0px rgba(0,0,0,0.05);
 }
 
+.messages{
+    width: 100%;
+    height: 100%;
+    padding: 60px 0 60px 0;
+    overflow-y: scroll;
+}
+
 .sendMessageForm{
     margin-top: 15px;
-    position: relative;
+    position: absolute;
+    left: 20px;
+    bottom: 0;
     display: flex;
-    width: 100%;
+    width: calc(100% - 40px);
     align-items: center;
     justify-content: space-between;
 }
@@ -62,18 +70,19 @@
 .message{
     padding: 10px;
     border-radius: 15px;
-    width: 60%;
+    max-width: 60%;
+    min-width: 40px;
     margin-bottom: 5px;
 }
 
 .message.from{
     background: var(--bg-color-host);
-    align-self: flex-end;
+    margin-left : auto;
     color: var(--text-color-white);
 }
 
 .message.to{
     background: var(--bg-color-primary);
-    align-self: flex-start;
+    margin-right : auto;
     color: #000000;
 }

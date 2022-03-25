@@ -8,11 +8,11 @@
     margin-top : 5vh
 }
 
-.propositionsContainer{
+.requestsContainer{
     --bg-color-accent : var(--bg-color-host)
 }
 
-.requestsContainer{
+.propositionsContainer{
     --bg-color-accent : var(--bg-color-refugee)
 }
 
@@ -97,6 +97,7 @@
     width: 100px;
     height: 100px;
     border-radius: 20px;
+    margin-right: 20px;
     background: var(--bg-color-secondary);
 }
 
@@ -117,7 +118,7 @@
 .smallInfo .infoIcon{
     width: 20px;
     height: 20px;
-    margin-right: 20px;
+    margin-right: 10px;
 }
 
 .description{
@@ -130,7 +131,7 @@
     width: 1px;
     height: 80%;
     background: var(--bg-color-secondary);
-    /* margin: 0 40px; */
+    margin: 0 10px;
 }
 
 .contactButton{

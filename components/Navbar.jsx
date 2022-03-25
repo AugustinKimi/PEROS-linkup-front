@@ -48,13 +48,36 @@ const Navbar = () => {
             </ul>
             {!userIsConnected ? 
                 <Link href='/login'><a className={style.connectLink}>Se connecter</a></Link> :
-                <span>{user.name}</span>
-            }
-            {userIsConnected && 
-                <Link href="/messages"><a>Messages</a></Link>
+                <DropDownMenu disconnectUser={disconnectUser} user={user}/>
             }
             
         </nav>
+    )
+}
+
+const DropDownMenu = ({user, disconnectUser}) => {
+
+    const [menuOpen, setMenuOpen] = useState(false)
+
+    const toggleMenu = () => {
+        setMenuOpen(!menuOpen)
+    }
+ 
+    return(
+        <div className={style.dropMenu}>
+            <Link href={`/create-${user.isHost ? "proposition" : "request"}`}><a className={style.createReqProp}>Créer une {user.isHost ? "proposition" : "demande"}</a></Link>
+            <span onClick={toggleMenu}>Pierre</span>
+            <div onClick={toggleMenu} className={`${style.dropArrow} ${menuOpen ? style.openArrow : style.closeArrow}`}>
+                <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.5 7.5L7.5 1.5L13.5 7.5" stroke="#76809D" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div className={`${style.menuContainer} ${menuOpen ? style.openMenu : style.closeMenu}`}>
+                <span onClick={disconnectUser}>Se déconnecter</span>
+                <Link href="/messages"><a>Messages</a></Link>
+                <span>Profil</span>
+            </div>
+        </div>
     )
 }
 

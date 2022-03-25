@@ -13,7 +13,7 @@ const CreateRequest = () => {
     const [houseSize, setHouseSize] = useState('')
     const [bedsNumber, setBedsNumber] = useState(0)
     const [hostCapacity, setHostCapacity] = useState(0)
-    const [description, setDescription] = useState([])
+    const [description, setDescription] = useState('')
 
     const [user, setUser] = useState({})
 
@@ -52,13 +52,15 @@ const CreateRequest = () => {
             body: JSON.stringify(requestData)
         })
         const json = await res.json()
+        if(json.success)
+            router.push('/refugee-requests')
         // if(json.success) 
         console.log(json)
     }
 
     return(
         <content>
-            <div className={style.formContainer}>
+            <div className={`${style.formContainer} ${user.isHost && style.propositionForm }`}>
                 <h1 className={style.title}>Bienvenue {user.name}, créez une propositon</h1>
                 <p className={style.underline}>Veuillez remplir tout les champs pour completer votre proposition</p>
                 <form  className={style.form} onSubmit={createRequest}>
@@ -99,7 +101,7 @@ const CreateRequest = () => {
                     <div className={style.right}>
                         <div className={style.formFieldContainer}>
                             <label className={style.fieldLabel} htmlFor="name">Ville résident</label>
-                            <input type="text" name="name" className={style.formField}  onChange={(e) => {setCity([e.target.value])}}/>
+                            <input type="text" name="name" className={style.formField}  onChange={(e) => {setCity(e.target.value)}}/>
                             <img src="" alt="" className={style.formFieldIcon}/>
                         </div>
                         <div className={`${style.formFieldContainer} ${style.descriptionField}`}>

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import style from '../styles/components/ChatMessages.module.css'
 import db from "../lib/firebase"
 import firebase from 'firebase/compat/app';
@@ -10,8 +10,9 @@ const ChatMessages = ({user,toUser}) => {
     const [toMessages, setToMessages] = useState([])
     const [messages, setMessages] = useState([])
 
+    const scroll = useRef()
+
     useEffect(async () => {
-        console.log(user, toUser ,'users')
         if(!user.userId || !toUser.userId) return
         db.collection("messages")
         .where("toUserId", "==", user.userId)
@@ -41,7 +42,6 @@ const ChatMessages = ({user,toUser}) => {
         }
         newMessagesArray.sort( compare );
         setMessages(newMessagesArray)
-        console.log(newMessagesArray, "messages")
     }, [toMessages, fromMessages])
 
     return(
@@ -49,19 +49,23 @@ const ChatMessages = ({user,toUser}) => {
             <div className={style.chatInfos}>
                 {toUser.name} {toUser.lastName}
             </div>
-            {messages.map((message, index) => {
-                 return(
-                    <div key={index} className={`${style.message} ${user.userId == message.fromUserId ? style.from : style.to}`}>{message.text}</div>
-                )
-            })}
+            <div className={style.messages}>
+                {messages.map((message, index) => {
+                    return(
+                        <div key={index} className={`${style.message} ${user.userId == message.fromUserId ? style.from : style.to}`}>{message.text}</div>
+                    )
+                })}
+                <div ref={scroll}></div>
+            </div>
+            
 
-            <SendMessages user={user} toUser={toUser} />
+            <SendMessages user={user} toUser={toUser} scroll={scroll}/>
         </div>
     )
 }
 
 
-const SendMessages = ({user, toUser}) => {
+const SendMessages = ({user, toUser, scroll}) => {
 
     const [messageContent, setMessageContent] = useState('')
 
@@ -76,6 +80,8 @@ const SendMessages = ({user, toUser}) => {
             createdAt : firebase.firestore.FieldValue.serverTimestamp(),
         })
         setMessageContent('')
+        console.log(scroll.current)
+        scroll.current.scrollIntoView({behavior : 'smooth'})
     }
 
     return(

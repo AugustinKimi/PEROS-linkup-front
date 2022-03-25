@@ -55,16 +55,16 @@ const Proposition = ({proposition}) => {
 
             <div className={style.userInfos}>
                 <span className={style.userName}>{proposition.user.name} {proposition.user.lastName}</span>
-                <SmallInfo iconUrl={'/icon/ijjef.svg'} info={proposition.isStudent ? "Etudiant" : "Travailleur"}/>
-                <SmallInfo iconUrl={'/icon/map-icon.svg'} info={`${proposition.city}, ${proposition.country}`}/>
+                <SmallInfo iconUrl={'/icons/work-icon.png'} info={proposition.isStudent ? "Etudiant" : "Travailleur"}/>
+                <SmallInfo iconUrl={'/icons/map-icon.png'} info={`${proposition.city}, ${proposition.country}`}/>
             </div>
 
             <div className={style.separator}></div>
 
             <div className={style.postInfos}>
-                <SmallInfo iconUrl={'/icon/house-icon.svg'} info={proposition.completFamily ? "Famille complète" : "Famille séparé"}/>
-                <SmallInfo iconUrl={'/icon/ijjef.svg'} info={`${proposition.adultRefugees} Adultes`}/>
-                <SmallInfo iconUrl={'/icon/people-icon.svg'} info={`${proposition.childrenRefugees} Enfants`}/>
+                <SmallInfo iconUrl={'/icons/house-icon.png'} info={`Maison, ${proposition.houseSize}m²`}/>
+                <SmallInfo iconUrl={'/icons/bed-icon.png'} info={`${proposition.bedsNumber} lits disponibles`}/>
+                <SmallInfo iconUrl={'/icons/people-icon.png'} info={`${proposition.hostCapacity} personnes maximum`}/>
             </div>
 
             <div className={style.separator}></div>

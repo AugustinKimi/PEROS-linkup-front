@@ -5,3 +5,7 @@
     height: calc(100vh - 200px);
     /* background: red; */
 }
+
+.userInfosPlaceholder{
+    flex: 1;
+}

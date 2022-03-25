@@ -25,13 +25,9 @@ const Messages = () => {
     }, [])
 
     useEffect(async () => {
-        console.log(userId, "user id")
-        console.log(userId)
         if(userId){
             const res = await fetchUserData(parseInt(userId[0]))
             if(res.success){
-
-                console.log(res, "RESSS")
                 setToUser(res.userData)
             }
         }
@@ -42,6 +38,7 @@ const Messages = () => {
             <div className={style.messagesContainer}>
                 <Conversations user={user}/>
                 <ChatMessages user={user} toUser={toUser}/>
+                <div className={style.userInfosPlaceholder}></div>
             </div>
             {/* {toUser &&<UserProfil toUser={toUser}/>} */}
         </content>

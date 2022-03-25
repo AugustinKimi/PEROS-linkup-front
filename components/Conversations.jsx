@@ -10,7 +10,8 @@ const Conversations = ({user}) => {
     const [messages, setMessages] = useState([])
 
 
-    useEffect(async () => {
+    useEffect( () => {
+        console.log(user)
         if(!user.userId) return
         db.collection("messages")
         .where("toUserId", "==", user.userId)

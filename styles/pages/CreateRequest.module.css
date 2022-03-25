@@ -7,6 +7,14 @@
     align-items: center;
 }
 
+.requestForm{
+    --bg-color-accent : var(--bg-color-refugee);
+}
+
+.propositionForm{
+    --bg-color-accent : var(--bg-color-host);
+}
+
 .form{
     display: flex;
     justify-content: center;
@@ -94,7 +102,7 @@
     justify-content: center;
     line-height: 100%;
     border-radius: 20px;
-    background : var(--bg-color-refugee);
+    background : var(--bg-color-accent);
     font-size: 16px;
     font-weight: 600;
     color: white;

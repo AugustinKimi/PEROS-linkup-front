@@ -1,8 +1,11 @@
 import style from '../styles/pages/CreateRequest.module.css'
 import {useState, useEffect} from 'react'
+import {useRouter} from 'next/router'
 import jwt from 'jsonwebtoken'
 
 const CreateRequest = () => {
+    
+    const router = useRouter()
 
     const [userStatus, setUserStatus] = useState('')
     const [completFamily, setCompletFamily] = useState(true)
@@ -48,13 +51,14 @@ const CreateRequest = () => {
             body: JSON.stringify(requestData)
         })
         const json = await res.json()
-        // if(json.success) 
+        if(json.success)
+            router.push('/host-propositions')
         console.log(json)
     }
 
     return(
         <content>
-            <div className={style.formContainer}>
+            <div className={`${style.formContainer} ${user.isHost && style.requestForm }`}>
                 <h1 className={style.title}>Bienvenue {user.name}, créez une demande</h1>
                 <p className={style.underline}>Veuillez remplir tout les champs pour completer votre demande</p>
                 <form  className={style.form} onSubmit={createRequest}>

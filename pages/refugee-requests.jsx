@@ -1,6 +1,7 @@
 import style from '../styles/pages/Explorer.module.css'
 import jwt from 'jsonwebtoken'
 import { useEffect,useState } from 'react'
+import Link from 'next/link'
 
 const RequestExplorer = ({requests}) => {
     return(
@@ -54,16 +55,16 @@ const Request = ({request}) => {
 
             <div className={style.userInfos}>
                 <span className={style.userName}>{request.user.name} {request.user.lastName}</span>
-                <SmallInfo iconUrl={'/icon/ijjef.png'} info={request.userStatus}/>
-                <SmallInfo iconUrl={'/icon/map-icon.png'} info={request.nativeCountry}/>
+                <SmallInfo iconUrl={'/icons/work-icon.png'} info={request.userStatus}/>
+                <SmallInfo iconUrl={'/icons/map-icon.png'} info={request.nativeCountry}/>
             </div>
 
             <div className={style.separator}></div>
 
             <div className={style.postInfos}>
-                <SmallInfo iconUrl={'/icon/ijjef.png'} info={request.completFamily ? "Famille complète" : "Famille séparé"}/>
-                <SmallInfo iconUrl={'/icon/ijjef.png'} info={`${request.adultRefugees} Adultes`}/>
-                <SmallInfo iconUrl={'/icon/ijjef.png'} info={`${request.childrenRefugees} Enfants`}/>
+                <SmallInfo iconUrl={'/icons/house-icon.png'} info={request.completFamily ? "Famille complète" : "Famille séparé"}/>
+                <SmallInfo iconUrl={'/icons/people-icon.png'} info={`${request.adultRefugees} Adultes`}/>
+                <SmallInfo iconUrl={'/icons/kids-icon.png'} info={`${request.childrenRefugees} Enfants`}/>
             </div>
 
             <div className={style.separator}></div>
@@ -72,7 +73,7 @@ const Request = ({request}) => {
 
             <div className={style.separator}></div>
 
-            <button className={style.contactButton}>Contacter</button>
+            <Link href={`/messages/${request.userId}`}><a className={style.contactButton}>Contacter</a></Link>
 
         </div>
     )
